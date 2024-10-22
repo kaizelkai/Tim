@@ -1,0 +1,341 @@
+/* Style par défaut pour les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #264e74;
+}
+
+header {
+   /* background-color: rgba(26, 26, 26, 0.7);  Fond transparent avec opacité */
+   backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0b0349;
+    color: white;
+}
+
+.iconTo img {
+    width: 50px;
+    height: auto;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Masqué par défaut, visible sur mobile */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+nav a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #f04;
+     /*transition: width 0.3s;*/
+}
+
+
+.menuEffet {
+    font-family: 'Protest Strike';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f04; /* Couleur de fond pour le menu effet */
+    border-radius: 5px; /* Arrondir les coins du fond */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition pour l'effet */
+    transform: scale(0); /* Commencez par être invisible */
+    z-index: -1; /* Positionner derrière le texte */
+    opacity: 1;
+}
+nav a:hover .menuEffet {
+    width: 100%;
+    transform: scale(1); /* L'effet devient visible au survol */
+}
+
+.bt_buy a {
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.bt_buy:hover {
+    transform: scale(1.2);
+    
+}
+
+.bt_buy a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 15px 30px; /* Espacement interne plus grand pour agrandir le bouton */
+    border-radius: 5px;
+    width: auto; /* Laisse la largeur s'adapter au contenu */
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bt_buy a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+
+}
+
+
+.bt_buy a:hover .menuEffet {
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    
+    .presnetationTrump2 .image {
+        width: 60%;
+        height: 85%;
+
+        margin-left: 20%;
+        margin-right: 50%;
+        position: absolute; /* Pour que l'image occupe tout l'espace */
+        bottom: 0; /* S'assure que l'image touche le bas de la section */
+        /* Prend toute la hauteur de la section */
+        z-index: 1; /* Position derrière les autres éléments si nécessaire */
+    }
+    
+    
+    .main{
+        padding: 1px;
+    }
+
+    .presnetationTrump img {
+        width: 100%;
+        height: 100%;
+        margin-right: 0;
+        
+        object-fit: cover; /* Remplir l'espace sans déformation */
+    }
+    
+    .presnetationTrump3 img {
+        width: 60%;
+        height: 100%;
+        margin-right: 0;
+        object-fit: cover; /* Remplir l'espace sans déformation */
+    }
+
+    
+}
+/* Style pour les petites écrans */
+@media (max-width: 768px) {
+
+    .presnetationTrump img {
+        width: 100%;
+        height: 90%;
+        margin-right: 0;
+        
+        object-fit: cover; /* Remplir l'espace sans déformation */
+    }
+    
+    .presnetationTrump3 img {
+        width: 100%;
+        height: 80%;
+        margin-right: 0;
+        object-fit: cover; /* Remplir l'espace sans déformation */
+    }
+    
+    .presnetationTrump2 .image {
+        width: 100%;
+        height: 65%;
+
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+        position: absolute; /* Pour que l'image occupe tout l'espace */
+        bottom: 0; /* S'assure que l'image touche le bas de la section */
+        /* Prend toute la hauteur de la section */
+        z-index: 1;
+        
+    }
+    .menu-icon {
+        display: block; /* Icône du menu visible sur les petits écrans */
+    }
+
+    nav {
+        
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0b0349;
+        width: 30%; /* Occupe toute la largeur de l'écran */
+        height: 0; /* Hauteur initiale à 0 pour cacher le menu */
+        overflow: hidden;
+        flex-direction: column;
+        transition: height 0.3s ease-in-out; /* Transition pour la hauteur */
+    }
+
+    nav.open {
+        height: auto; /* Ajuste la hauteur en fonction du contenu */
+    }
+
+    nav a {
+        display: block; /* Chaque lien prend toute la largeur */
+        margin: 10px 0;
+        padding: 15px;
+        text-align: center;
+        width: 100%; /* Chaque lien prend toute la largeur disponible */
+    }
+
+    
+
+    .vote {
+        position: absolute; /* Positionnement absolu pour superposer */
+        width: 100%;
+        top: 50%; /* Centre verticalement par rapport à la fenêtre */
+        left: 50%; /* Centre horizontalement par rapport à la fenêtre */
+        transform: translate(-50%, -50%); /* Ajuste pour centrer exactement */
+        text-align: center; /* Centre le texte à l'intérieur de la div */
+        z-index: 2; /* Positionner au-dessus de l'autre image */
+        color: white; /* Change la couleur du texte si nécessaire */
+        font-family: Arial, sans-serif; /* Définit une police */
+    }
+
+    .vote h1{
+        margin: 25px;
+        font-size: 25px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+   
+    .main{
+        padding: 35px;
+    }
+    
+}
+
+/*                 
+.trumpImge{
+    background: linear-gradient(to bottom, #002694, #0097da);
+}*/
+.presnetationTrump {
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 100vh; /* Hauteur de la section */
+    overflow: hidden; /* Masque les parties qui dépassent */
+    
+}
+.presnetationTrump3 {
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 100vh; /* Hauteur de la section */
+    overflow: hidden; /* Masque les parties qui dépassent */
+        
+}
+.presnetationTrump3 .image {
+    position: relative; /* Positionnement relatif pour l'image du fond */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    z-index: 1; /* Positionner derrière l'autre image */
+    display: flex;
+    justify-content: center; /* Place l'image à droite */
+    align-items: center;
+    margin-bottom: -45px;
+}
+
+.presnetationTrump .image {
+    position: relative; /* Positionnement relatif pour l'image du fond */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    z-index: 1; /* Positionner derrière l'autre image */
+    display: flex;
+    justify-content: flex-end; /* Place l'image à droite */
+    align-items: center;
+    margin-bottom: -45px;
+}
+
+
+
+/* presnetationTrump2 */
+.bar img{
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 180px;
+    margin-bottom: -48px;
+    margin-top: -77px; /* Hauteur de la section */
+    overflow: hidden;
+}
+
+.presnetationTrump2 {
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 100vh; /* Hauteur de la section à la taille de la fenêtre */
+    overflow: hidden; /* Masque les parties qui dépassent */
+    background-image: url("../media/img/Tim\ Walz\ website\ stuff-06.png");
+    background-size: cover;        /* Assure que l'image couvre toute la section */
+    background-position: center;   /* Centre l'image de fond */
+    background-repeat: no-repeat;  /* Empêche la répétition de l'image */
+    
+}
+
+.presnetationTrump2 .image {
+    max-width: 100%;
+    max-height: 100%;
+   
+}
+
+.presnetationTrump2 img {
+    width: 100%;
+    height: 100%; /* Prend toute la hauteur de son conteneur */
+     /* Assure que l'image couvre toute la section sans déformation */
+    display: block; /* Supprime tout espace blanc en dessous de l'image */
+}
+
+
+.site-footer {
+    background-color: #002694;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* Texte du footer */
+.site-footer p {
+    margin: 0;
+    font-size: 14px;
+}
