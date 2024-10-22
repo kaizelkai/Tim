@@ -12,15 +12,18 @@ body {
 }
 
 header {
-   /* background-color: rgba(26, 26, 26, 0.7);  Fond transparent avec opacité */
-   backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #0b0349;
+    background-image: url("../media/img/TimWalz02.png");
+    background-size: cover; /* Assure que l'image couvre tout le header */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
     color: white;
 }
+
 
 .iconTo img {
     width: 50px;
